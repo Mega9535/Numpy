@@ -14,22 +14,3 @@ def determinant2x2(vec1, vec2):
     return "invalid shapes"
   result=(vec1[0]*vec2[1])-(vec1[1]*vec2[0])
   return result
-
-def cross_product(vec1, vec2):
-  if len(vec1)!=len(vec2) or len(vec1)>3 or len(vec1)<1 or len(vec2)>3 or len(vec2)<1:
-    return "invalid shapes"
-  vec1=np.array(vec1)
-  vec2=np.array(vec2)
-  result=np.zeros(len(vec1))
-  for i in range(0,len(result)):
-    if i==0:
-     v1=vec1[[1,2]]
-     v2=vec2[[1,2]]
-    if i==1:
-      v1=vec1[[0,2]]
-      v2=vec2[[0,2]]    
-    if i==2:
-     v1=vec1[[0,1]]
-     v2=vec2[[0,1]]
-    result[i]=determinant2x2(v1, v2)
-  return result
